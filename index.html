@@ -3,146 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>T. Gokulakrishnan | Portfolio</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Resume - Gokulakrishnan T</title>
+
   <style>
+    :root {
+      --main: #007bff;
+      --bg: #f4f4f4;
+      --text: #222;
+      --gray: #555;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-      scroll-behavior: smooth;
+      background: white;
+      color: var(--text);
     }
 
-    header {
-      background-color: #343a40;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #00d4ff;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
+    .container {
+      max-width: 960px;
       margin: auto;
-    }
-
-    h1, h2 {
-      color: #343a40;
-    }
-
-    .projects {
-      display: grid;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
       gap: 30px;
     }
 
-    .project-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .left, .right {
+      flex: 1;
+      min-width: 280px;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    h1 {
+      font-size: 32px;
+      margin: 0;
+      color: var(--main);
     }
 
-    .project-card a {
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.3s;
+    h2 {
+      font-size: 20px;
+      color: var(--main);
+      margin-top: 30px;
+      border-bottom: 2px solid var(--main);
+      padding-bottom: 5px;
     }
 
-    .project-card a:hover {
-      color: #0056b3;
+    p {
+      margin: 5px 0 10px;
     }
 
-    footer {
-      background-color: #343a40;
+    ul {
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--main);
       color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      margin: 5px 5px 5px 0;
+    }
+
+    .contact p {
+      margin: 3px 0;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+      }
+      .container {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header data-aos="fade-down">
-  <h1>T. Gokulakrishnan</h1>
-  <p>Aspiring Machine Learning Engineer passionate about AI and Deployment.</p>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<div class="container">
 
-<section id="projects">
-  <h2 data-aos="fade-right">Projects</h2>
-  <div class="projects">
-    
-    <div class="project-card" data-aos="fade-up">
-      <h3>🐶 Cat vs Dog Image Classification</h3>
-      <p>Built a deep learning model with Optuna hyperparameter tuning, achieving 83% test accuracy. Deployed on Hugging Face Spaces.</p>
-      <p>
-        <a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/cat-dog-classifier" target="_blank">Live App</a> |
-        <a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">GitHub</a>
-      </p>
+  <!-- Left Panel -->
+  <div class="left">
+    <h1>T. Gokulakrishnan</h1>
+    <p><strong>Aspiring ML Engineer</strong></p>
+
+    <h2>Summary</h2>
+    <p>Motivated and self-taught beginner in AI/ML with hands-on projects involving deep learning and NLP. Interested in model deployment and solving real-world problems using machine learning.</p>
+
+    <h2>Skills</h2>
+    <div>
+      <span class="badge">Python</span>
+      <span class="badge">Machine Learning</span>
+      <span class="badge">Deep Learning</span>
+      <span class="badge">Transformers</span>
+      <span class="badge">PyTorch</span>
+      <span class="badge">Optuna</span>
+      <span class="badge">Model Deployment</span>
+      <span class="badge">Hugging Face</span>
+      <span class="badge">Git</span>
     </div>
 
-    <div class="project-card" data-aos="fade-up">
-      <h3>🧠 Sentiment Analysis with DistilGPT2</h3>
-      <p>Fine-tuned DistilGPT2 using the Yelp Review dataset for binary sentiment classification. Deployed as a Hugging Face Space.</p>
-      <p>
-        <a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/distilgpt2-sentiment-space" target="_blank">Live App</a> |
-        <a href="https://huggingface.co/GOKULAKRISHNAN7/distilgpt2-yelp-sentiment" target="_blank">Model</a>
-      </p>
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>📧 gokulakrishnan.maths@gmail.com</p>
+      <p>🌐 <a href="https://github.com/Gokulakrishnan-Git" target="_blank">github.com/Gokulakrishnan-Git</a></p>
+      <p>💼 <a href="https://linkedin.com/in/gokulakrishnan-t-379b38331" target="_blank">LinkedIn</a></p>
     </div>
-
   </div>
-</section>
 
-<section id="about">
-  <h2 data-aos="fade-left">About Me</h2>
-  <p data-aos="fade-up">Hi, I'm T. Gokulakrishnan, a passionate beginner in Machine Learning and AI.<br>
-  I enjoy solving real-world problems through AI and especially love deploying ML models.<br>
-  I am currently focused on deep learning, MLOps, and building impactful, real-time applications.<br>
-  Every day, I strive to learn something new and build projects that reflect my growth.</p>
-</section>
+  <!-- Right Panel -->
+  <div class="right">
+    <h2>Projects</h2>
 
-<section id="contact">
-  <h2 data-aos="fade-right">Contact</h2>
-  <p data-aos="fade-up">GitHub: <a href="https://github.com/Gokulakrishnan-Git" target="_blank">Gokulakrishnan-Git</a></p>
-  <p data-aos="fade-up">LinkedIn: <a href="https://www.linkedin.com/in/gokulakrishnan-t-379b38331" target="_blank">Gokulakrishnan T</a></p>
-</section>
+    <p><strong>🐶 Cat vs Dog Image Classifier</strong></p>
+    <ul>
+      <li>Built a CNN-based classifier with Optuna hyperparameter tuning (83% accuracy).</li>
+      <li>Deployed using Hugging Face Spaces.</li>
+      <li><a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/cat-dog-classifier" target="_blank">Live App</a></li>
+    </ul>
 
-<footer>
-  <p>&copy; 2025 T. Gokulakrishnan</p>
-</footer>
+    <p><strong>📝 Sentiment Classifier using DistilGPT2</strong></p>
+    <ul>
+      <li>Fine-tuned a Transformer model on Yelp dataset for binary sentiment classification.</li>
+      <li>Achieved high accuracy and deployed to Hugging Face Spaces.</li>
+      <li><a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/distilgpt2-sentiment-space" target="_blank">Live App</a></li>
+    </ul>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
+    <h2>Education</h2>
+    <p><strong>PhD in Mathematics (Pursuing)</strong><br>Institute Name, India</p>
+    <p><strong>Machine Learning Specialization</strong><br>Coursera (Andrew Ng, DeepLearning.AI)</p>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>Build and deploy more ML projects.</li>
+      <li>Gain a strong grip on MLOps tools.</li>
+      <li>Secure a machine learning internship/job in 2025.</li>
+    </ul>
+  </div>
+
+</div>
 
 </body>
 </html>
