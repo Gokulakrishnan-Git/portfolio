@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T. Gokulakrishnan | Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
-        header { background-color: #343a40; color: white; padding: 20px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        section { padding: 40px; max-width: 900px; margin: auto; }
-        h1, h2 { color: #343a40; }
-        h3 { margin-bottom: 10px; }
-        .project-block { background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px; }
-        .project-block a { text-decoration: none; color: #007bff; font-weight: bold; }
-        footer { background-color: #343a40; color: white; text-align: center; padding: 10px; margin-top: 40px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        .project-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        ul { padding-left: 20px; }
+        blockquote {
+            background: #eee;
+            border-left: 5px solid #ccc;
+            margin: 20px 0;
+            padding: 15px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -23,6 +71,7 @@
     <p>Aspiring Machine Learning Engineer passionate about AI and Deployment.</p>
     <nav>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -31,42 +80,50 @@
 <section id="projects">
     <h2>Projects</h2>
 
-    <div class="project-block">
-        <h3>🐶🐱 Cat vs Dog Image Classifier</h3>
-        <p>A deep learning model built from scratch using PyTorch to classify grayscale images of cats and dogs.</p>
-        <ul>
-            <li>Custom dataset built using OpenCV with grayscale image preprocessing.</li>
-            <li>Used a flexible CNN and tuned hyperparameters with <strong>Optuna</strong>.</li>
-            <li>Achieved <strong>83% test accuracy</strong> and deployed on Hugging Face Spaces.</li>
-        </ul>
-        <p>
-            <a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/cat-dog-classifier" target="_blank">Live Demo</a> |
-            <a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">GitHub</a>
-        </p>
+    <div class="project-card">
+        <h3>🐶🐱 Cat vs Dog Image Classification</h3>
+        <p>Built a CNN model using PyTorch to classify images of cats and dogs. Used Optuna for hyperparameter tuning and achieved 83% test accuracy. Deployed using Gradio on Hugging Face Spaces.</p>
+        <p><strong>Demo:</strong> <a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/cat-dog-classifier" target="_blank">Cat-Dog Classifier on Hugging Face</a></p>
+        <p><strong>Code:</strong> <a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">GitHub Repository</a></p>
+        <img src="images/catdog_demo.png" alt="Cat Dog Classifier Screenshot (Add this image)">
     </div>
 
-    <div class="project-block">
-        <h3>📝 Sentiment Analysis with DistilGPT2</h3>
-        <p>Fine-tuned DistilGPT2 on the Yelp Review Polarity dataset for binary sentiment classification.</p>
-        <ul>
-            <li>Converted DistilGPT2 into a classifier using the Hugging Face Transformers library.</li>
-            <li>Model was trained to distinguish between <strong>positive</strong> and <strong>negative</strong> sentiments.</li>
-            <li>Deployed on Hugging Face Spaces for real-time text classification.</li>
-        </ul>
-        <p>
-            <a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/distilgpt2-sentiment-space" target="_blank">Live Demo</a> |
-            <a href="https://huggingface.co/GOKULAKRISHNAN7/distilgpt2-yelp-sentiment" target="_blank">Model on Hugging Face Hub</a> |
-            <a href="https://github.com/Gokulakrishnan-Git/sentiment-gpt2" target="_blank">GitHub</a>
-        </p>
+    <div class="project-card">
+        <h3>💬 Sentiment Analysis with DistilGPT2</h3>
+        <p>Fine-tuned the <code>distilGPT2</code> transformer model using the Yelp Review Polarity dataset for sentiment classification. Achieved accurate results and deployed the model using Gradio.</p>
+        <p><strong>Demo:</strong> <a href="https://huggingface.co/spaces/GOKULAKRISHNAN7/distilgpt2-sentiment-space" target="_blank">Sentiment Classifier on Hugging Face</a></p>
+        <p><strong>Model Card:</strong> <a href="https://huggingface.co/GOKULAKRISHNAN7/distilgpt2-yelp-sentiment" target="_blank">View on Hugging Face Hub</a></p>
+        <img src="images/sentiment_demo.png" alt="Sentiment Analysis Screenshot (Add this image)">
     </div>
+
+    <p><a href="files/Gokul_Resume.pdf" download style="font-weight:bold; color:green;">📄 Download Resume</a></p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li><strong>Languages:</strong> Python, HTML, CSS</li>
+        <li><strong>Libraries:</strong> PyTorch, Hugging Face Transformers, Optuna, OpenCV</li>
+        <li><strong>Tools:</strong> Git, Jupyter Notebook, Gradio, Hugging Face Spaces</li>
+        <li><strong>Concepts:</strong> CNNs, Transfer Learning, Sentiment Analysis, Model Deployment</li>
+    </ul>
 </section>
 
 <section id="about">
     <h2>About Me</h2>
-    <p>Hi, I'm T. Gokulakrishnan, a passionate beginner in Machine Learning and AI.<br>
-    I love building projects that solve real-world problems, especially those involving intelligent automation and deployment.<br>
-    I'm currently focusing on deep learning, transformer models, and MLOps.<br>
-    I believe hands-on experience and consistency are the keys to becoming a great ML engineer.</p>
+    <p>
+        Hi, I'm T. Gokulakrishnan — a self-taught Machine Learning enthusiast currently pursuing a PhD in Mathematics.
+        I specialize in building practical deep learning projects with a focus on deployment and real-world applications.
+        With experience in training CNNs from scratch, fine-tuning transformer models, and deploying ML apps on Hugging Face Spaces,
+        I'm on a mission to become a full-stack AI engineer.
+    </p>
+</section>
+
+<section id="testimonials">
+    <h2>Testimonials</h2>
+    <blockquote>
+        "Gokulakrishnan is a focused and hardworking student. He has made great progress in AI and always strives for practical deployment." – Prof. [Add Name]
+    </blockquote>
 </section>
 
 <section id="contact">
