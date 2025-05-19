@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>T. Gokulakrishnan | Portfolio</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
         header { background-color: #343a40; color: white; padding: 20px; text-align: center; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        section { padding: 40px; max-width: 800px; margin: auto; }
+        section { padding: 40px; max-width: 900px; margin: auto; }
         h1, h2 { color: #343a40; }
-        .projects a { text-decoration: none; color: #007bff; }
+        h3 { margin-bottom: 10px; }
+        .project-block { background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px; }
+        .project-block a { text-decoration: none; color: #007bff; font-weight: bold; }
         footer { background-color: #343a40; color: white; text-align: center; padding: 10px; margin-top: 40px; }
     </style>
 </head>
@@ -28,19 +30,37 @@
 
 <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-        <h3>Cat vs Dog Image Classification</h3>
-        <p>A simple deep learning model to classify images as Cat or Dog. Deployed in Hugging Face Spaces.</p>
+
+    <div class="project-block">
+        <h3>🐶🐱 Cat vs Dog Image Classifier</h3>
+        <p>A deep learning model built from scratch using PyTorch to classify grayscale images of cats and dogs.</p>
+        <ul>
+            <li>Custom image dataset built using OpenCV with preprocessing and error handling.</li>
+            <li>Used a configurable CNN architecture and tuned hyperparameters using <strong>Optuna</strong>.</li>
+            <li>Achieved <strong>83% test accuracy</strong> and trained the final model using GPU.</li>
+        </ul>
         <p><a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">View Project on GitHub</a></p>
+    </div>
+
+    <div class="project-block">
+        <h3>📝 Sentiment Analysis with DistilGPT2</h3>
+        <p>Fine-tuned a transformer model (DistilGPT2) on the Yelp Review Polarity dataset for binary sentiment classification.</p>
+        <ul>
+            <li>Used Hugging Face Transformers to fine-tune a causal language model on labeled sentiment data.</li>
+            <li>Trained model to distinguish between <strong>positive</strong> and <strong>negative</strong> reviews.</li>
+            <li>Deployed live on <strong>Hugging Face Spaces</strong> with a user-friendly interface.</li>
+        </ul>
+        <p><a href="https://huggingface.co/spaces/Gokulakrishnan-Git/sentiment-gpt2" target="_blank">View Live Demo</a> |
+           <a href="https://github.com/Gokulakrishnan-Git/sentiment-gpt2" target="_blank">View Code on GitHub</a></p>
     </div>
 </section>
 
 <section id="about">
     <h2>About Me</h2>
     <p>Hi, I'm T. Gokulakrishnan, a passionate beginner in Machine Learning and AI.<br>
-    I love building projects that can solve real-world problems and I’m particularly interested in deploying ML models.<br>
-    I am currently focused on learning more about deep learning, model deployment, and creating impactful AI solutions.<br>
-    I believe that continuous learning and hands-on experience are the keys to growth, and I’m excited to build my journey step by step!</p>
+    I love building projects that solve real-world problems, especially those that involve deploying intelligent systems.<br>
+    Currently focused on deep learning, model deployment, and fine-tuning transformer models.<br>
+    I believe hands-on experience is the key to growth, and I’m committed to building impactful solutions one step at a time.</p>
 </section>
 
 <section id="contact">
