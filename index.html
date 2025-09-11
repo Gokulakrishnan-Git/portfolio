@@ -5,17 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T. Gokulakrishnan | Portfolio</title>
   <style>
-    /* Basic Reset & Body */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0f172a;
       color: #e2e8f0;
-      line-height: 1.5;
       scroll-behavior: smooth;
     }
 
@@ -27,15 +21,9 @@
       z-index: 1000;
       padding: 20px 40px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center; /* center the nav */
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(10px);
-    }
-    header .logo {
-      font-size: 1.4rem;
-      color: #38bdf8;
-      font-weight: bold;
     }
     nav {
       display: flex;
@@ -59,7 +47,7 @@
       justify-content: space-between;
       min-height: 100vh;
       padding: 0 40px;
-      margin-top: 70px; /* header height spacing */
+      margin-top: 70px; /* spacing for fixed header */
     }
     #hero .intro {
       flex: 1;
@@ -116,80 +104,11 @@
         max-width: 100%;
       }
     }
-
-    /* Other sections: Projects, Certificates, Contact etc. */
-    section {
-      padding: 60px 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section h2 {
-      font-size: 2rem;
-      color: #38bdf8;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    }
-    .card h3 {
-      color: #38bdf8;
-      margin-bottom: 12px;
-      font-size: 1.3rem;
-    }
-    .card p {
-      color: #cbd5e1;
-      font-size: 1rem;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 15px;
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .cert-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-    }
-    .cert-gallery img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .cert-gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      color: #94a3b8;
-    }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">T. Gokulakrishnan</div>
   <nav>
     <a href="#hero">Home</a>
     <a href="#projects">Projects</a>
@@ -209,47 +128,3 @@
     <img src="images/my-photo.jpg" alt="T. Gokulakrishnan">
   </div>
 </section>
-
-<!-- Projects Section -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <div class="card">
-      <h3>Cat vs Dog Image Classification</h3>
-      <p>Deep learning model to classify images as Cat or Dog. Deployed in Hugging Face Spaces.</p>
-      <a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">View on GitHub</a>
-    </div>
-    <!-- more project cards here -->
-  </div>
-</section>
-
-<!-- Certificates Section -->
-<section id="certificates">
-  <h2>Certificates</h2>
-  <div class="cert-gallery">
-    <a href="certificates/machine-learning-specialization.pdf" target="_blank">
-      <img src="certificates/machine-learning-specialization.jpg" alt="Machine Learning Specialization">
-    </a>
-    <a href="certificates/deep-learning-specialization.pdf" target="_blank">
-      <img src="certificates/deep-learning-specialization.jpg" alt="Deep Learning Specialization">
-    </a>
-    <a href="certificates/machine-learning-in-production.pdf" target="_blank">
-      <img src="certificates/machine-learning-in-production.jpg" alt="Machine Learning in Production">
-    </a>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>You can reach me at:</p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/Gokulakrishnan-Git" target="_blank">Gokulakrishnan-Git</a></p>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/gokulakrishnan-t-379b38331" target="_blank">Gokulakrishnan T</a></p>
-</section>
-
-<footer>
-  <p>&copy; 2025 T. Gokulakrishnan</p>
-</footer>
-
-</body>
-</html>
