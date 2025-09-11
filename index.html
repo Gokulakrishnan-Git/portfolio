@@ -45,10 +45,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 40px; /* closeness between image & text */
+      gap: 40px;
       min-height: 100vh;
       padding: 0 20px;
-      margin-top: 60px; /* header offset */
+      margin-top: 60px;
     }
     #hero .photo {
       width: 250px;
@@ -91,7 +91,6 @@
       background-color: #2fabe0;
     }
 
-    /* Responsive Hero */
     @media(max-width: 768px) {
       #hero {
         flex-direction: column;
@@ -149,7 +148,7 @@
     /* Certificates */
     .cert-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
     .cert-gallery img {
@@ -210,15 +209,9 @@
 <section id="certificates">
   <h2>Certificates</h2>
   <div class="cert-gallery">
-    <a href="certificates/machine-learning-specialization.pdf" target="_blank">
-      <img src="certificates/machine-learning-specialization.jpg" alt="Machine Learning Specialization">
-    </a>
-    <a href="certificates/deep-learning-specialization.pdf" target="_blank">
-      <img src="certificates/deep-learning-specialization.jpg" alt="Deep Learning Specialization">
-    </a>
-    <a href="certificates/machine-learning-in-production.pdf" target="_blank">
-      <img src="certificates/machine-learning-in-production.jpg" alt="Machine Learning in Production">
-    </a>
+    <img src="certificates/machine-learning-specialization.jpg" alt="Machine Learning Specialization">
+    <img src="certificates/deep-learning-specialization.jpg" alt="Deep Learning Specialization">
+    <img src="certificates/machine-learning-in-production.jpg" alt="Machine Learning in Production">
   </div>
 </section>
 
