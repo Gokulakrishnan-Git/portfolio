@@ -145,22 +145,25 @@
       font-weight: bold;
     }
 
-    /* Certificates */
+        /* Certificates */
     .cert-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      display: flex;
+      flex-direction: column;   /* stack vertically */
+      align-items: center;      /* center horizontally */
+      gap: 30px;                /* space between certificates */
     }
     .cert-gallery img {
-      width: 100%;
+      width: 90%;               /* make image large, almost full width */
+      max-width: 800px;         /* prevent too wide on big screens */
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .cert-gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
+
 
     /* Footer */
     footer {
@@ -229,4 +232,5 @@
 
 </body>
 </html>
+
 
