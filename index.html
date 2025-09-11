@@ -72,8 +72,9 @@
     #hero img {
       width: 250px;
       height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
+      border-radius: 50%; /* circular photo */
+      object-fit: contain; /* ensure full face is visible */
+      background-color: #0f172a; /* fills background if photo doesn’t fit circle */
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
     #hero .intro {
