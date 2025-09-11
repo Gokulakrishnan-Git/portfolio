@@ -13,7 +13,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Global Section Styling */
     section {
       min-height: 100vh;
       display: flex;
@@ -35,7 +34,6 @@
       color: #cbd5e1;
     }
 
-    /* Header/Nav */
     header {
       position: fixed;
       top: 0;
@@ -66,13 +64,27 @@
     /* Hero Section */
     #hero {
       background: linear-gradient(180deg, #0f172a, #1e293b);
+      flex-direction: row;
+      text-align: left;
+      gap: 40px;
+      padding-top: 120px; /* to avoid header overlap */
+    }
+    #hero img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+    #hero .intro {
+      max-width: 600px;
     }
     #hero h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
     #hero p {
-      font-size: 1.2rem;
-      margin-top: 15px;
+      font-size: 1.1rem;
     }
 
     /* Projects Grid */
@@ -124,11 +136,6 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
 
-    /* Contact */
-    #contact p {
-      font-size: 1.1rem;
-    }
-
     footer {
       background: #1e293b;
       text-align: center;
@@ -145,15 +152,20 @@
     <a href="#hero">Home</a>
     <a href="#projects">Projects</a>
     <a href="#certificates">Certificates</a>
-    <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <!-- Hero Section -->
 <section id="hero">
-  <h1>Hello, I'm Gokulakrishnan</h1>
-  <p>Aspiring Machine Learning Engineer | AI & Deployment Enthusiast</p>
+  <img src="images/my-photo.jpg" alt="T. Gokulakrishnan">
+  <div class="intro">
+    <h1>Hello, I'm Gokulakrishnan</h1>
+    <p>
+      I’m an aspiring Machine Learning Engineer passionate about building AI solutions and deploying real-world ML models.<br>
+      Currently exploring deep learning, model deployment, and impactful AI projects to grow step by step in my journey.
+    </p>
+  </div>
 </section>
 
 <!-- Projects Section -->
@@ -182,17 +194,6 @@
       <img src="certificates/machine-learning-in-production.jpg" alt="Machine Learning in Production">
     </a>
   </div>
-</section>
-
-<!-- About Section -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Hi, I'm Gokulakrishnan, a passionate beginner in Machine Learning and AI.<br>
-    I love building projects that solve real-world problems and I’m particularly interested in deploying ML models.<br>
-    Currently, I’m focused on deep learning, deployment, and creating impactful AI solutions.<br>
-    This portfolio will grow as I add more projects, achievements, and experiences along the way.
-  </p>
 </section>
 
 <!-- Contact Section -->
