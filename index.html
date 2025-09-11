@@ -5,59 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T. Gokulakrishnan | Portfolio</title>
   <style>
-    body {
+    /* Basic Reset & Body */
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0f172a;
       color: #e2e8f0;
+      line-height: 1.5;
       scroll-behavior: smooth;
     }
 
-    section {
-      min-height: 80vh; /* reduced from 100vh */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px; /* reduced padding */
-      text-align: center;
-    }
-
-    h1, h2 {
-      color: #38bdf8;
-      margin-bottom: 15px;
-    }
-
-    p {
-      max-width: 700px;
-      line-height: 1.5;
-      font-size: 1rem;
-      color: #cbd5e1;
-      margin: 10px 0;
-    }
-
+    /* Header/Nav */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 25px;
-      z-index: 1000;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.2rem;
+    header .logo {
+      font-size: 1.4rem;
+      color: #38bdf8;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
     }
     nav a {
       color: #e2e8f0;
-      margin: 0 10px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      font-weight: 500;
       transition: color 0.3s;
     }
     nav a:hover {
@@ -66,84 +54,134 @@
 
     /* Hero Section */
     #hero {
-      background: linear-gradient(180deg, #0f172a, #1e293b);
-      flex-direction: row;
-      text-align: left;
-      gap: 25px;
-      padding-top: 100px; /* smaller offset */
-    }
-    #hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: contain;
-      background-color: #0f172a;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding: 0 40px;
+      margin-top: 70px; /* header height spacing */
     }
     #hero .intro {
-      max-width: 500px;
+      flex: 1;
+      max-width: 600px;
     }
-    #hero h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
+    #hero .intro h1 {
+      font-size: 3rem;
+      color: #38bdf8;
+      margin-bottom: 20px;
     }
-    #hero p {
-      font-size: 1rem;
+    #hero .intro p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+    }
+    #hero .intro .cta {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    #hero .intro .cta:hover {
+      background-color: #2fabe0;
+    }
+    #hero .photo {
+      flex-shrink: 0;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+    #hero .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    /* Projects Grid */
+    /* Responsive Hero */
+    @media(max-width: 900px) {
+      #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      #hero .photo {
+        margin-bottom: 30px;
+      }
+      #hero .intro {
+        max-width: 100%;
+      }
+    }
+
+    /* Other sections: Projects, Certificates, Contact etc. */
+    section {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #38bdf8;
+      margin-bottom: 25px;
+      text-align: center;
+    }
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 15px;
-      width: 100%;
-      max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
     .card {
       background: #1e293b;
       border-radius: 12px;
-      padding: 15px;
-      text-align: left;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.4);
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
     .card h3 {
-      margin-top: 0;
       color: #38bdf8;
-      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
     }
     .card p {
-      font-size: 0.95rem;
+      color: #cbd5e1;
+      font-size: 1rem;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* Certificates Grid */
     .cert-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
-      width: 100%;
-      max-width: 800px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
     }
     .cert-gallery img {
       width: 100%;
       border-radius: 8px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .cert-gallery img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
 
+    /* Footer */
     footer {
-      background: #1e293b;
       text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
+      padding: 40px 0;
       color: #94a3b8;
     }
   </style>
@@ -151,7 +189,7 @@
 <body>
 
 <header>
-  <h1>T. Gokulakrishnan</h1>
+  <div class="logo">T. Gokulakrishnan</div>
   <nav>
     <a href="#hero">Home</a>
     <a href="#projects">Projects</a>
@@ -162,13 +200,13 @@
 
 <!-- Hero Section -->
 <section id="hero">
-  <img src="images/my-photo.jpg" alt="T. Gokulakrishnan">
   <div class="intro">
     <h1>Hello, I'm Gokulakrishnan</h1>
-    <p>
-      Aspiring Machine Learning Engineer passionate about building AI solutions and deploying ML models.<br>
-      Exploring deep learning, deployment, and impactful AI projects step by step in my journey.
-    </p>
+    <p>Machine Learning Engineer & AI Enthusiast. Building real-world ML models, deploying them, and solving impactful problems with data.</p>
+    <a class="cta" href="#projects">View Projects</a>
+  </div>
+  <div class="photo">
+    <img src="images/my-photo.jpg" alt="T. Gokulakrishnan">
   </div>
 </section>
 
@@ -179,8 +217,9 @@
     <div class="card">
       <h3>Cat vs Dog Image Classification</h3>
       <p>Deep learning model to classify images as Cat or Dog. Deployed in Hugging Face Spaces.</p>
-      <p><a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">View on GitHub</a></p>
+      <a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">View on GitHub</a>
     </div>
+    <!-- more project cards here -->
   </div>
 </section>
 
@@ -203,8 +242,9 @@
 <!-- Contact Section -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>GitHub: <a href="https://github.com/Gokulakrishnan-Git" target="_blank">Gokulakrishnan-Git</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/gokulakrishnan-t-379b38331" target="_blank">Gokulakrishnan T</a></p>
+  <p>You can reach me at:</p>
+  <p><strong>GitHub:</strong> <a href="https://github.com/Gokulakrishnan-Git" target="_blank">Gokulakrishnan-Git</a></p>
+  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/gokulakrishnan-t-379b38331" target="_blank">Gokulakrishnan T</a></p>
 </section>
 
 <footer>
