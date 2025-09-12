@@ -7,7 +7,10 @@
 
   <!-- AOS Library for scroll animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     /* Reset & Body */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -163,18 +166,14 @@
       font-weight: bold;
     }
 
-    
-    #education {
-      text-align: center;
-    }
-    
+    /* Education */
+    #education { text-align: center; }
     .edu-timeline {
       display: flex;
       flex-direction: column;
       gap: 25px;
       margin-top: 30px;
     }
-    
     .edu-item {
       background: rgba(30, 41, 59, 0.8);
       padding: 20px;
@@ -182,28 +181,18 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    
     .edu-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 18px rgba(56,189,248,0.4);
     }
-    
-    .edu-item h3 {
-      color: #38bdf8;
-      margin-bottom: 5px;
-    }
-    
+    .edu-item h3 { color: #38bdf8; margin-bottom: 5px; }
     .edu-item span {
       display: block;
       font-size: 0.9rem;
       color: #94a3b8;
       margin-bottom: 8px;
     }
-    
-    .edu-item p {
-      font-size: 1rem;
-      color: #cbd5e1;
-    }
+    .edu-item p { font-size: 1rem; color: #cbd5e1; }
 
     /* Certificates */
     .cert-gallery {
@@ -224,17 +213,15 @@
       transform: scale(1.02);
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
-    #contact {
-      text-align: center;
-    }
-    
+
+    /* Contact */
+    #contact { text-align: center; }
     .contact-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
       margin: 30px 0;
     }
-    
     .contact-card {
       background: rgba(30, 41, 59, 0.7);
       border-radius: 12px;
@@ -242,37 +229,24 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    
     .contact-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 20px rgba(56,189,248,0.5);
     }
-    
     .contact-card i {
       font-size: 2rem;
       color: #38bdf8;
       margin-bottom: 10px;
     }
-    
-    .contact-card h3 {
-      color: #38bdf8;
-      margin-bottom: 8px;
-    }
-    
+    .contact-card h3 { color: #38bdf8; margin-bottom: 8px; }
     .contact-card p a {
       color: #e2e8f0;
       text-decoration: none;
       transition: color 0.3s;
     }
-    
-    .contact-card p a:hover {
-      color: #38bdf8;
-    }
-    
-    .resume-btn {
-      margin-top: 25px;
-    }
-    
+    .contact-card p a:hover { color: #38bdf8; }
+
+    .resume-btn { margin-top: 25px; }
     .resume-btn .cta {
       display: inline-block;
       padding: 12px 24px;
@@ -283,12 +257,10 @@
       text-decoration: none;
       transition: all 0.3s;
     }
-    
-    .resume-btn .cta:hover {
-      background-color: #2fabe0;
-    }
+    .resume-btn .cta:hover { background-color: #2fabe0; }
 
-        .contact-form {
+    /* Contact Form */
+    .contact-form {
       margin-top: 40px;
       background: rgba(30, 41, 59, 0.7);
       padding: 25px;
@@ -298,18 +270,8 @@
       margin-right: auto;
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
-    
-    .contact-form h3 {
-      color: #38bdf8;
-      margin-bottom: 15px;
-    }
-    
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    
+    .contact-form h3 { color: #38bdf8; margin-bottom: 15px; }
+    .contact-form form { display: flex; flex-direction: column; gap: 15px; }
     .contact-form input,
     .contact-form textarea {
       padding: 12px;
@@ -318,7 +280,6 @@
       outline: none;
       font-size: 1rem;
     }
-    
     .contact-form button {
       background: #38bdf8;
       color: #0f172a;
@@ -329,10 +290,7 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-    
-    .contact-form button:hover {
-      background: #2fabe0;
-    }
+    .contact-form button:hover { background: #2fabe0; }
 
     /* Footer */
     footer {
@@ -343,11 +301,7 @@
 
     /* Responsive */
     @media(max-width: 768px) {
-      #hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-      }
+      #hero { flex-direction: column; text-align: center; gap: 20px; }
     }
   </style>
 </head>
@@ -357,6 +311,7 @@
   <nav>
     <a href="#hero">Home</a>
     <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
     <a href="#certificates">Certificates</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -434,9 +389,6 @@
 </section>
 
 <!-- Contact Section -->
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <section id="contact" data-aos="fade-up">
   <h2>Contact</h2>
   <div class="contact-container">
@@ -444,9 +396,8 @@
       <i class="fas fa-envelope"></i>
       <h3>Email</h3>
       <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gokulakrishnan6008@gmail.com" target="_blank">
-   gokulakrishnan6008@gmail.com
-</a></p>
-
+        gokulakrishnan6008@gmail.com
+      </a></p>
     </div>
     <div class="contact-card">
       <i class="fab fa-github"></i>
@@ -465,25 +416,24 @@
     </div>
   </div>
 
+  <!-- Contact Form -->
   <div class="contact-form">
-  <h3>Send me a message</h3>
-  <form action="https://formspree.io/f/xzzaweee" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="_replyto" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-    <input type="hidden" name="_subject" value="New message from Portfolio!">
-    <input type="hidden" name="_next" value="https://gokulakrishnan-git.github.io/portfolio/thanks.html">
-
-  </form>
-</div>
+    <h3>Send me a message</h3>
+    <form action="https://formspree.io/f/xzzaweee" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+      <input type="hidden" name="_subject" value="New message from Portfolio!">
+    </form>
+  </div>
 
   <div class="resume-btn">
-    <a class="cta" href="documents/Gokul_Resume.pdf" target="_blank"><i class="fas fa-file-alt"></i> Download Resume</a>
+    <a class="cta" href="documents/Gokul_Resume.pdf" target="_blank">
+      <i class="fas fa-file-alt"></i> Download Resume
+    </a>
   </div>
 </section>
-
-
 
 <footer>
   <p>&copy; 2025 T. Gokulakrishnan</p>
@@ -497,9 +447,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
