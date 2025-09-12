@@ -4,13 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T. Gokulakrishnan | Portfolio</title>
+
+  <!-- AOS Library for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <style>
+    /* Reset & Body */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f172a;
       color: #e2e8f0;
       scroll-behavior: smooth;
+      background: linear-gradient(135deg, #0f172a, #1e1b4b, #0c4a6e);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Header/Nav */
@@ -22,7 +34,7 @@
       padding: 15px 30px;
       display: flex;
       justify-content: center;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(10px);
     }
     nav {
@@ -38,6 +50,7 @@
     }
     nav a:hover {
       color: #38bdf8;
+      text-shadow: 0 0 8px rgba(56,189,248,0.8);
     }
 
     /* Hero Section */
@@ -57,6 +70,7 @@
       overflow: hidden;
       border: 4px solid #38bdf8;
       box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      animation: slideInLeft 1.2s ease;
       flex-shrink: 0;
     }
     #hero .photo img {
@@ -65,12 +79,14 @@
       object-fit: cover;
     }
     #hero .intro {
-      max-width: 500px;
+      max-width: 550px;
+      animation: slideInRight 1.2s ease;
     }
     #hero .intro h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #38bdf8;
       margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(56,189,248,0.8);
     }
     #hero .intro p {
       font-size: 1.1rem;
@@ -79,27 +95,31 @@
     }
     #hero .intro .cta {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 24px;
       background-color: #38bdf8;
       color: #0f172a;
       font-weight: bold;
       border-radius: 6px;
       text-decoration: none;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
+      box-shadow: 0 0 15px rgba(56,189,248,0.7);
     }
     #hero .intro .cta:hover {
       background-color: #2fabe0;
+      box-shadow: 0 0 25px rgba(56,189,248,1);
     }
 
-    @media(max-width: 768px) {
-      #hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-      }
+    /* Slide Animations */
+    @keyframes slideInLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
 
-    /* Projects Section */
+    /* Sections */
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -110,14 +130,17 @@
       font-size: 2rem;
       color: #38bdf8;
       margin-bottom: 25px;
+      text-shadow: 0 0 12px rgba(56,189,248,0.8);
     }
+
+    /* Projects */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
     .card {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.9);
       border-radius: 12px;
       padding: 20px;
       text-align: left;
@@ -126,7 +149,7 @@
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 25px rgba(56,189,248,0.5);
     }
     .card h3 {
       color: #38bdf8;
@@ -145,31 +168,40 @@
       font-weight: bold;
     }
 
-        /* Certificates */
+    /* Certificates */
     .cert-gallery {
       display: flex;
-      flex-direction: column;   /* stack vertically */
-      align-items: center;      /* center horizontally */
-      gap: 30px;                /* space between certificates */
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
     }
-    .cert-gallery img {
-      width: 90%;               /* make image large, almost full width */
-      max-width: 800px;         /* prevent too wide on big screens */
+    .cert-gallery a img {
+      width: 90%;
+      max-width: 800px;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
-    .cert-gallery img:hover {
+    .cert-gallery a img:hover {
       transform: scale(1.02);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 25px rgba(56,189,248,0.5);
     }
-
 
     /* Footer */
     footer {
       text-align: center;
       padding: 30px 0;
       color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      #hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
     }
   </style>
 </head>
@@ -194,28 +226,22 @@
     <p>
       I am a <strong>PhD Scholar in Mathematics</strong> with a deep passion for 
       <strong>Artificial Intelligence</strong> and <strong>Machine Learning</strong>. 
-      My journey is driven by curiosity to understand complex systems and build intelligent solutions that make a real-world impact.  
+      I love transforming research ideas into real-world ML models and deploying them at scale.
     </p>
     <p>
-      I enjoy transforming research ideas into working ML models, with a strong interest in 
-      <strong>deep learning, model deployment, and scalable AI systems</strong>. 
-      I am also working on projects that bridge theory and practice, combining my academic rigor with hands-on implementation skills.  
-    </p>
-    <p>
-      My long-term goal is to leverage AI to solve meaningful problems, 
-      contribute to cutting-edge research, and grow as an <strong>AI Engineer</strong> 
-      who delivers value at scale.  
+      My focus areas are <strong>deep learning</strong>, <strong>model deployment</strong>, 
+      and <strong>scalable AI systems</strong>. I aim to grow into an 
+      <strong>AI Engineer</strong> who solves meaningful problems and contributes to impactful innovation.
     </p>
     <a class="cta" href="#projects">View Projects</a>
   </div>
 </section>
 
-
 <!-- Projects Section -->
-<section id="projects">
+<section id="projects" data-aos="fade-up">
   <h2>Projects</h2>
   <div class="projects-grid">
-    <div class="card">
+    <div class="card" data-aos="zoom-in">
       <h3>Cat vs Dog Image Classification</h3>
       <p>Deep learning model to classify images as Cat or Dog. Deployed in Hugging Face Spaces.</p>
       <a href="https://github.com/Gokulakrishnan-Git/Cat_dog_classification" target="_blank">View on GitHub</a>
@@ -224,7 +250,7 @@
 </section>
 
 <!-- Certificates Section -->
-<section id="certificates">
+<section id="certificates" data-aos="fade-up">
   <h2>Certificates</h2>
   <div class="cert-gallery">
     <a href="certificates/machine-learning-specialization.pdf" target="_blank">
@@ -239,10 +265,8 @@
   </div>
 </section>
 
-
-
 <!-- Contact Section -->
-<section id="contact">
+<section id="contact" data-aos="fade-up">
   <h2>Contact</h2>
   <p>GitHub: <a href="https://github.com/Gokulakrishnan-Git" target="_blank">Gokulakrishnan-Git</a></p>
   <p>LinkedIn: <a href="https://www.linkedin.com/in/gokulakrishnan-t-379b38331" target="_blank">Gokulakrishnan T</a></p>
@@ -252,9 +276,11 @@
   <p>&copy; 2025 T. Gokulakrishnan</p>
 </footer>
 
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
 </body>
 </html>
-
-
-
-
