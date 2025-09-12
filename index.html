@@ -245,7 +245,53 @@
     .resume-btn .cta:hover {
       background-color: #2fabe0;
     }
-        
+
+        .contact-form {
+      margin-top: 40px;
+      background: rgba(30, 41, 59, 0.7);
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    
+    .contact-form h3 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+    
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+    
+    .contact-form button {
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .contact-form button:hover {
+      background: #2fabe0;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -333,7 +379,10 @@
     <div class="contact-card">
       <i class="fas fa-envelope"></i>
       <h3>Email</h3>
-      <p><a href="mailto:gokulakrishnan6008@gmail.com">gokulakrishnan6008@gmail.com</a></p>
+      <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gokulakrishnan6008@gmail.com" target="_blank">
+   gokulakrishnan6008@gmail.com
+</a></p>
+
     </div>
     <div class="contact-card">
       <i class="fab fa-github"></i>
@@ -351,6 +400,17 @@
       <p>Tamil Nadu, India</p>
     </div>
   </div>
+
+  <div class="contact-form">
+  <h3>Send me a message</h3>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
   <div class="resume-btn">
     <a class="cta" href="documents/Gokul_Resume.pdf" target="_blank"><i class="fas fa-file-alt"></i> Download Resume</a>
   </div>
@@ -370,5 +430,6 @@
 
 </body>
 </html>
+
 
 
