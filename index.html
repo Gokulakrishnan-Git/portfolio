@@ -355,48 +355,144 @@
   </nav>
 </header>
 
-
 <!-- Hero Section -->
 <section id="hero">
-  <!-- Particles Background -->
-  <div id="particles-js"></div>
-
-  <!-- Content -->
   <div class="photo">
     <img src="images/my-photo.jpg" alt="T. Gokulakrishnan">
   </div>
-
   <div class="intro">
-    <h1>Hello, I'm <span class="typewriter"></span></h1>
+    <h1>Hello, I'm <span class="highlight">Gokulakrishnan</span></h1>
+    <p id="typewriter"></p>
     <p>
       I am a <strong>PhD Scholar in Mathematics</strong> with a deep passion for 
       <strong>Artificial Intelligence</strong> and <strong>Machine Learning</strong>. 
       I love transforming research ideas into real-world ML models and deploying them at scale.
     </p>
-    <p>
-      My focus areas are <strong>deep learning</strong>, <strong>model deployment</strong>, 
-      and <strong>scalable AI systems</strong>. I aim to grow into an 
-      <strong>AI Engineer</strong> who solves meaningful problems and contributes to impactful innovation.
-    </p>
     <a class="cta" href="#projects">View Projects</a>
   </div>
 </section>
 
-<!-- Particles.js Script -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<style>
+/* Hero Section Enhancements */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 0 20px;
+  margin-top: 60px;
+}
+
+#hero .photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  animation: float 4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+#hero .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero .intro {
+  max-width: 550px;
+  animation: fadeInUp 1.5s ease;
+}
+
+#hero .intro h1 {
+  font-size: 2.8rem;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+#hero .intro .highlight {
+  color: #facc15;
+}
+
+#hero .intro p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+#hero .intro .cta {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #38bdf8, #2dd4bf);
+  color: #0f172a;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#hero .intro .cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #38bdf8;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
 <script>
-  particlesJS("particles-js", {
-    particles: {
-      number: { value: 80 },
-      size: { value: 3 },
-      move: { speed: 1 },
-      line_linked: { enable: true, opacity: 0.3 },
-    },
-    interactivity: {
-      events: { onhover: { enable: true, mode: "repulse" } },
-    },
-  });
+// Typewriter Effect
+const typewriterText = [
+  "An Aspiring AI Engineer 🚀",
+  "Deep Learning Enthusiast 🤖",
+  "Passionate Researcher 📚"
+];
+
+let i = 0;
+let j = 0;
+let currentText = "";
+let isDeleting = false;
+
+function type() {
+  const element = document.getElementById("typewriter");
+  if (!element) return;
+
+  if (i < typewriterText.length) {
+    if (!isDeleting && j <= typewriterText[i].length) {
+      currentText = typewriterText[i].substring(0, j++);
+      element.innerHTML = currentText;
+      setTimeout(type, 100);
+    } else if (isDeleting && j >= 0) {
+      currentText = typewriterText[i].substring(0, j--);
+      element.innerHTML = currentText;
+      setTimeout(type, 60);
+    } else if (!isDeleting && j > typewriterText[i].length) {
+      isDeleting = true;
+      setTimeout(type, 1500);
+    } else if (isDeleting && j < 0) {
+      isDeleting = false;
+      i++;
+      if (i >= typewriterText.length) i = 0;
+      setTimeout(type, 200);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", type);
 </script>
+
 
 <!-- Typewriter Script -->
 <script>
@@ -649,6 +745,7 @@ type();
 
 </body>
 </html>
+
 
 
 
