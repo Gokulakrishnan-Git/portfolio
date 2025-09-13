@@ -214,6 +214,43 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
 
+    #achievements {
+      text-align: center;
+    }
+    
+    .achievements-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .achievement-item {
+      background: rgba(30, 41, 59, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: left;
+    }
+    
+    .achievement-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(56,189,248,0.4);
+    }
+    
+    .achievement-item h3 {
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+    
+    .achievement-item p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    
     /* Contact */
     #contact { text-align: center; }
     .contact-container {
@@ -388,6 +425,28 @@
   </div>
 </section>
 
+<!-- Achievements Section -->
+<section id="achievements" data-aos="fade-up">
+  <h2>Achievements & Publications</h2>
+  <div class="achievements-list">
+    <div class="achievement-item">
+      <h3>GATE 2023</h3>
+      <p>Qualified <strong>Graduate Aptitude Test in Engineering (Mathematics)</strong> – a prestigious national-level exam demonstrating strong problem-solving and mathematical ability.</p>
+    </div>
+
+    <div class="achievement-item">
+      <h3>Research Publication</h3>
+      <p>
+        Kushwaha, A. K., <strong>Gokulakrishnan, T.</strong>, & Behera, H. (2025).  
+        Impact of wave–current interaction on wave scattering by single and dual surface-piercing docks.  
+        <em>Engineering Analysis with Boundary Elements, 179</em>, 106334.  
+        <a href="https://doi.org/10.1016/j.enganabound.2025.106334" target="_blank">[Read Paper]</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+  
 <!-- Contact Section -->
 <section id="contact" data-aos="fade-up">
   <h2>Contact</h2>
@@ -447,3 +506,4 @@
 
 </body>
 </html>
+
